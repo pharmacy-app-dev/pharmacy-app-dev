@@ -1,6 +1,5 @@
 import Brand from './Parts/Brand';
 import Menus from './Parts/Menus';
-import { FaBeer } from 'react-icons/fa';
 
 const Sidebar = ()=>{
     return (

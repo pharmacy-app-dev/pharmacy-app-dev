@@ -19,6 +19,13 @@ module.exports = {
                     DEFAULT: '#B366B1'
                 }
             },
+            gridTemplateColumns: {
+                'main': 'min-content 1fr'
+            },
+            gridTemplateRows:{
+                'main': '100vh'
+            }
+
         },
     },
     variants: {
