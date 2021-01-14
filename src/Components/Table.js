@@ -1,5 +1,5 @@
 import React from "react";
-import ActionButton from "./ActionButton";
+
 import {
     useFilters,
     useTable,
@@ -9,35 +9,19 @@ import {
 } from "react-table";
 import { TiArrowSortedDown, TiArrowSortedUp } from "react-icons/ti";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
-import Datasource from "./Datasource";
 
+/**
+ * Props :
+ * inputSearch
+ * data
+ * column
+ * */
 const Table = (Props) => {
-    const data = React.useMemo(() => Datasource, []);
-
-    const columns = React.useMemo(
-        () => [
-            {
-                Header: "ID",
-                accessor: "id", // accessor is the "key" in the data
-            },
-            {
-                Header: "Nama",
-                accessor: "name",
-            },
-            {
-                Header: "Kategori",
-                accessor: "category",
-            },
-            {
-                Header: "Aksi",
-                Cell: (Props) => <ActionButton id={Props.row.values.id} />,
-            },
-        ],
-        []
-    );
+   
+    const data = React.useMemo(() => Props.data, []);
+    const columns = React.useMemo(() => Props.column, []);
 
     React.useEffect(() => {
-        console.log(Props.inputSearch);
         setGlobalFilter(Props.inputSearch || undefined);
     }, [Props.inputSearch]);
 
@@ -53,7 +37,6 @@ const Table = (Props) => {
         getTableProps,
         getTableBodyProps,
         headerGroups,
-        rows,
         prepareRow,
         setGlobalFilter,
 
