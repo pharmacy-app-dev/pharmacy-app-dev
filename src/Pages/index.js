@@ -4,6 +4,7 @@ import { SwitchTransition, TransitionGroup, CSSTransition } from "react-transiti
 
 import Dashboard from "./Dashboard";
 import Drugs from "./Drugs/";
+import DrugsEdit from "./Drugs/Edit/";
 import Info from "./Info";
 
 import { Switch, Route, useLocation } from "react-router-dom";
@@ -26,7 +27,8 @@ const Pages = () => {
                     <Switch location={location}>
                         <Route exact path="/" component={Dashboard}></Route>
                         <Route exact path="/drugs" component={Drugs}></Route>
-                        <Route exact path="/info" component={Info}></Route>
+                        <Route exact path="/drugs/edit/:id" component={DrugsEdit}></Route>
+                        <Route exact path="/info" component={DrugsEdit}></Route>
                     </Switch>
                 </CSSTransition>
             </SwitchTransition>
