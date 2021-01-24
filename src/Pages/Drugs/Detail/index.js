@@ -4,7 +4,7 @@ const DrunkEdit = () => {
     const {id} = useParams();
     return(
         <div>
-            {id}
+            
         </div>
     )
 }

@@ -1,16 +1,13 @@
-import React from 'react';
-
-import { SwitchTransition, TransitionGroup, CSSTransition } from "react-transition-group";
-
+import React from "react";
+import { SwitchTransition, CSSTransition } from "react-transition-group";
 import Dashboard from "./Dashboard";
 import Drugs from "./Drugs/";
-import DrugsEdit from "./Drugs/Edit/";
-import Info from "./Info";
-
+import DrugsDetail from "./Drugs/Detail/";
 import { Switch, Route, useLocation } from "react-router-dom";
 
 const Pages = () => {
     const location = useLocation();
+    // mengatasi error node
     const nodeRef = React.useRef(null);
 
     return (
@@ -27,8 +24,8 @@ const Pages = () => {
                     <Switch location={location}>
                         <Route exact path="/" component={Dashboard}></Route>
                         <Route exact path="/drugs" component={Drugs}></Route>
-                        <Route exact path="/drugs/edit/:id" component={DrugsEdit}></Route>
-                        <Route exact path="/info" component={DrugsEdit}></Route>
+                        <Route exact path="/drugs/detail/:id" component={DrugsDetail}></Route>
+                        {/* <Route exact path="/info" component={DrugsEdit}></Route> */}
                     </Switch>
                 </CSSTransition>
             </SwitchTransition>

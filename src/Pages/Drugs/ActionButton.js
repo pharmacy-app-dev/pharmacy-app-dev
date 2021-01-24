@@ -8,11 +8,8 @@ const ActionButton = ({id}) => {
 
     return (
         <>
-            <button className={buttonStyle} onClick={() => alert(`detail/${id}`)}>
+            <Link to={`/drugs/detail/${id}`} className={buttonStyle} >
                 Detail
-            </button>
-            <Link to={`/drugs/edit/${id}`} className={buttonStyle} >
-                Edit
             </Link>
             <button onClick={() => setModalShow(true)}>
                 Delete

@@ -18,8 +18,8 @@ import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
  * */
 const Table = (Props) => {
    
-    const data = React.useMemo(() => Props.data, []);
-    const columns = React.useMemo(() => Props.column, []);
+    const data = React.useMemo(() => Props.data, [Props.data]);
+    const columns = React.useMemo(() => Props.column, [Props.column]);
 
     React.useEffect(() => {
         setGlobalFilter(Props.inputSearch || undefined);
